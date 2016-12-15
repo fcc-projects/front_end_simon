@@ -13,7 +13,9 @@ $( function() {
 
 	colourSquares();
 	createAudioElements();
-	setTimeout(resetGame(), 2000);
+	setDisplay();
+
+	setTimeout(resetGame, 1000);
 
 	/* DISPLAY INITIALISATION */
 	function colourSquares() {
@@ -47,11 +49,12 @@ $( function() {
 		$("#display-count").text(colourSequence.length);
 	}
 
+	$(".button-restart").on( "click", resetGame );
+
 	/* GAMEPLAY */
 	/* handle state */
 	function resetGame() {
 		colourSequence = [];
-		setDisplay();
 		endPlayerTurn();
 		pressCount = 0;
 
@@ -195,8 +198,6 @@ $( function() {
 
 	function addToSequence() {
 		colourSequence.push(Math.floor(Math.random() * 4));
-
-		setDisplay();
 	}
 
 	function playSequence(callback) {
@@ -209,6 +210,7 @@ $( function() {
 			if (i == colourSequence.length) {
 				clearInterval(interval)
 
+				setDisplay();
 				if (typeof callback == 'function') callback();
 			};
 
