@@ -1,4 +1,11 @@
+body {
+	font-family: 'Roboto', sans-serif;
+	box-sizing: border-box;	
+	background-color: #fff8ed;
+}
+
 .content-container {
+	margin-top: 10vh;
 }
 
 .game-display-container {
@@ -18,4 +25,59 @@
 	background-color: #000000;
 	margin: 0.25rem;
 	border-radius: 10%;
+}
+
+#display-count {
+	height: 3rem;
+	width: 16.75rem;
+	margin: 0.25rem;
+	margin-bottom: 0.7rem;
+	padding: 1rem;
+	box-sizing: border-box;
+	text-align: right;
+	border-radius: 10px;
+	background-color: #e5fbff;
+}
+
+.btn {
+	display: inline-block;
+	line-height: 2rem;
+	position: relative;
+	top: 0;
+	font-family: 'Roboto', sans-serif;
+	font-size: 0.75rem;
+	background-color: #eeeeee;
+	margin: 0.25rem;
+	height: 2rem;
+	border: none;
+	border-radius: 5px;
+	width: 8rem;
+	text-align: center;
+	cursor: pointer;
+
+	box-shadow: 0px 4px rgba(0, 0, 0, 0.2);
+	
+	transition: all 0.2s ease;
+	user-select: none;
+}
+
+#button-strict {
+	display: none;
+}
+
+label {
+	font-family: 'Roboto', sans-serif;
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#button-strict:checked + label {
+	top: 4px;
+	background-color: #000000;
+	box-shadow: none;
+}
+
+.btn:active {
+	top: 4px;
+	box-shadow: none;
 }
